@@ -62,6 +62,14 @@ public static function getVagas($where = null, $order = null, $limit = null){
 
 }
 
+public static function getQuantidadeVagas($where = null){
+
+    return (new Database ('vagas'))->select($where,null,null,'COUNT(*) as qtd')
+                                   ->fetchObject()
+                                   ->qtd;
+
+}
+
 
 public static function getVagasID($id){
     return (new Database ('vagas'))->select('id = ' .$id)
