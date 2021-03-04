@@ -7,7 +7,7 @@ use  \App\Db\Pagination;
 
 
 $buscar = filter_input(INPUT_GET, 'buscar', FILTER_SANITIZE_STRING);
-$filtroStatus = filter_input(INPUT_GET, 'status', FILTER_SANITIZE_STRING);
+$filtroStatus = filter_input(INPUT_GET, 'filtroStatus', FILTER_SANITIZE_STRING);
 $filtroStatus = in_array($filtroStatus,['n','s']) ? $filtroStatus : '';
 
 $condicoes = [
@@ -24,9 +24,9 @@ $quantidadeVagas = Vaga:: getQuantidadeVagas($where);
 
 $obPagination = new Pagination($quantidadeVagas, $_GET['pagina'] ?? 1, 5);
 
-print_r($obPagination->getLimit());
 
-$vagas = Vaga::getVagas($where);
+
+$vagas = Vaga::getVagas($where, null,$obPagination->getLimit());
 
 include __DIR__.'/includes/header.php';
 include __DIR__.'/includes/listagem.php';

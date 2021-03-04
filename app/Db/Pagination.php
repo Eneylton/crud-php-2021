@@ -32,4 +32,21 @@
         $offset = ($this->limit * ($this->currentPage -1));
         return $offset.','.$this->limit;
     }
+
+    public function getPages(){
+        if($this->pages == 1) return [];
+
+        $paginas = [];
+
+        for($i = 1; $i <= $this->pages; $i++){
+          
+            $paginas[] =[
+                'pagina' => $i,
+                'atual'  => $i == $this->currentPage 
+            ];
+        }
+
+        return $paginas;
+    }
+
  }
