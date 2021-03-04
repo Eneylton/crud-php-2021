@@ -7,11 +7,11 @@ define('TITLE','Cadastrar Vaga');
 use \App\Entidy\Vaga;
 
 if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
-    $obVaga = new Vaga;
-    $obVaga->titulo = $_POST['titulo'];
-    $obVaga->descricao = $_POST['descricao'];
-    $obVaga->ativo = $_POST['ativo'];
-    $obVaga-> cadastar();
+    $obVagas = new Vaga;
+    $obVagas->titulo = $_POST['titulo'];
+    $obVagas->descricao = $_POST['descricao'];
+    $obVagas->ativo = $_POST['ativo'];
+    $obVagas-> cadastar();
 
     header('location: index.php?status=success');
 

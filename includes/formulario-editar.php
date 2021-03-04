@@ -16,12 +16,12 @@
    
    <div class="form-group">
         <label >Titulo</label>
-        <input type="text" class="form-control" name="titulo" >
+        <input type="text" class="form-control" name="titulo" value="<?=$obVagas->titulo?>">
    </div>
 
    <div class="form-group">
         <label >Descrição</label>
-        <textarea type="text" class="form-control" name="descricao" rows="5"></textarea>
+        <textarea type="text" class="form-control" name="descricao" rows="5"><?=$obVagas->descricao?></textarea>
    </div>
 
 
@@ -37,7 +37,7 @@
 
         <div class="form-check form-check-inline">
         <label class="form-control">
-        <input type="radio" name="ativo" value="n"> Inativo
+        <input type="radio" name="ativo" value="n" <?=$obVagas->ativo == 'n' ? 'checked' : '' ?>> Inativo
         </label>
         </div>
      </div>

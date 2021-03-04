@@ -16,5 +16,5 @@
     <div class="jumbotron bg-danger">
     
     <h2>Eneylton Barros</h2>
-    <p>Meu primero crude </p>
+    <p>Meu primero crud... </p>
     </div>
