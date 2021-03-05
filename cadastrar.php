@@ -7,6 +7,7 @@ define('TITLE','Cadastrar Vaga');
 use \App\Entidy\Vaga;
 use   \App\Session\Login;
 
+$vagasUsuarios = Vaga::getVagasUsuarios(null,null,null);
 
 Login::requireLogin();
 

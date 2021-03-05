@@ -62,6 +62,13 @@ public static function getVagas($where = null, $order = null, $limit = null){
 
 }
 
+public static function getVagasUsuarios($where = null, $order = null, $limit = null){
+
+    return (new Database ('usuarios'))->select($where,$order,$limit)
+                                   ->fetchAll(PDO::FETCH_CLASS, self::class);
+
+}
+
 public static function getQuantidadeVagas($where = null){
 
     return (new Database ('vagas'))->select($where,null,null,'COUNT(*) as qtd')

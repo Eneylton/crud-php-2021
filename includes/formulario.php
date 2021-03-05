@@ -1,3 +1,15 @@
+<?php
+
+$resultados ='';
+
+foreach ($vagasUsuarios as $user ) {
+   
+   $resultados .= '<option value="'.$user->id.'">'.$user->email.'</option>';
+
+}
+
+?>
+
 <main>
 
 <section>
@@ -22,6 +34,20 @@
    <div class="form-group">
         <label >Descrição</label>
         <textarea type="text" class="form-control" name="descricao" rows="5"></textarea>
+   </div>
+
+   <div class="form-grop" >
+   
+   <label for="cars">Lista de Usuários</label>
+
+      <select name="cars" id="user" class="form-control">
+     
+
+     <?=$resultados ?>
+         
+      
+      </select>
+
    </div>
 
 

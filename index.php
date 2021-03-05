@@ -28,8 +28,6 @@ $quantidadeVagas = Vaga:: getQuantidadeVagas($where);
 
 $obPagination = new Pagination($quantidadeVagas, $_GET['pagina'] ?? 1, 5);
 
-
-
 $vagas = Vaga::getVagas($where, null,$obPagination->getLimit());
 
 include __DIR__.'/includes/header.php';
