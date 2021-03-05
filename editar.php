@@ -5,6 +5,12 @@ require __DIR__.'/vendor/autoload.php';
 define('TITLE','Editar Vaga');
 
 use \App\Entidy\Vaga;
+use   \App\Session\Login;
+
+
+Login::requireLogin();
+
+
 
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
  

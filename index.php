@@ -4,6 +4,10 @@ require __DIR__.'/vendor/autoload.php';
 
 use \App\Entidy\Vaga;
 use  \App\Db\Pagination;
+use   \App\Session\Login;
+
+
+Login::requireLogin();
 
 
 $buscar = filter_input(INPUT_GET, 'buscar', FILTER_SANITIZE_STRING);

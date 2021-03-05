@@ -1,3 +1,15 @@
+<?php 
+use \App\Session\Login;
+
+
+ $usuariologado = Login:: getUsuarioLogado();
+
+ $usuario = $usuariologado ? $usuariologado['nome'].
+          
+          '<a href="logout.php" class="text-light font-weigth-bold ml-2"> Sair </a>' :
+          'Visitante: <a href="login.php" class="text-light font-weigth-bold ml-2">Entrar</a>'
+
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -17,4 +29,13 @@
     
     <h2>Eneylton Barros</h2>
     <p>Meu primero crud... </p>
+
+    <hr class="border-light">
+
+      <div class="d-flex justify-content-start">
+      
+         <?=$usuario ?>
+        
+      </div>
+
     </div>
