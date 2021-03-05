@@ -41,9 +41,10 @@ foreach ($vagasUsuarios as $user ) {
    <label for="cars">Lista de Usuários</label>
 
       <select name="cars" id="user" class="form-control">
-     
-
-     <?=$resultados ?>
+         
+        <option value="">Selecione um uusuário !!!</option>
+          
+         <?=$resultados ?>
          
       
       </select>
