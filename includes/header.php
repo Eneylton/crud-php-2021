@@ -28,7 +28,7 @@ use \App\Session\Login;
     <div class="jumbotron bg-danger">
     
     <h2>Eneylton Barros</h2>
-    <p>Meu primero crud... </p>
+    <p><a href="produtos.php" >Lista de produtos</a></p>
 
     <hr class="border-light">
 

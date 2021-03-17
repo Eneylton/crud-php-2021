@@ -19,7 +19,11 @@ if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
     exit;
 }
 
+
+
 $obVagas = Vaga::getVagasID($_GET['id']);
+
+
 
 if(!$obVagas instanceof Vaga){
     header('location: index.php?status=error');

@@ -8,7 +8,7 @@ use \PDOException;
 class Database{
 
     const HOST ='localhost';
-    const NAME ='db_crud';
+    const NAME ='db_phpcarrinho';
     const USER ='root';
     const PASS ='';
 
@@ -90,12 +90,18 @@ class Database{
     public function update($where,$values){
 
         $fields = array_keys($values);
-
+        
         $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
         $this-> execute($query,array_values($values));
         return true;  
     }
-  
+    
+    public function buscarID($id){
+        
+        $query = 'SELECT * FROM '.$this->table.' WHERE '.$id;
+
+        return $this->execute($query); 
+    }
 
     public function delete($where){
 
