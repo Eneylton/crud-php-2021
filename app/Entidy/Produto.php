@@ -90,6 +90,14 @@ public function atualizar(){
   
 }
 
+public function atualizarPedidos(){
+    return (new Database ('produtos'))->update('id = ' .$this-> id, [
+ 
+                                                'preco'      => $this->preco
+    ]);
+  
+}
+
 public function excluir(){
     return (new Database ('produtos'))->delete('id = ' .$this->id);
   

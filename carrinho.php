@@ -62,6 +62,19 @@ if (isset($_GET['acao'])) {
             }
         }
 
+        if (is_array($_POST['val'])) {
+
+            
+            foreach ($_POST['val'] as $id => $preco) {
+
+                $item = Produto:: getProdutoID($id);
+
+                $item->preco = $preco;
+                $item-> atualizarPedidos();
+        }
+
+    }
+
     }
 }
 
@@ -92,7 +105,7 @@ echo '
 
               <div class="col d-flex align-items-end" >
                 <button type="submit" class="btn btn-primary" name="" >Pesquisar</button>
-                &nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp
                 <a class="btn btn-warning" href="finalizar.php">
                 Finalizar
                 </a>
@@ -155,8 +168,14 @@ echo '
                 <input type="text" size="3" name="prod[' .$id. ']" value="' . $qtd . '" /> 
                 <input type="submit" value="Atualizar" />
                 </td>
-                <td> R$ ' . number_format($item->preco,"2",",",".") . '</td>
-                <td> <a href="?acao=del&id=' . $id . '">Remover </a></td>
+                <td>R$ 
+                
+                <input type="text" size="3" name="val[' .$id. ']" value="' . $item->preco . '" /> 
+                <input type="submit" value="Atualizar" />
+                </td>
+
+
+                <td> <a href="?acao=del&id=' . $id . '"><i class="far fa-address-card"></i> Remover </a></td>
                 <td> R$ ' .number_format($qtd * $item->preco,"2",",","."). '</td>
             </tr>
             
