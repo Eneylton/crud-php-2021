@@ -92,13 +92,19 @@ echo '
 
               <div class="col d-flex align-items-end" >
                 <button type="submit" class="btn btn-primary" name="" >Pesquisar</button>
+                &nbsp&nbsp&nbsp&nbsp
+                <a class="btn btn-warning" href="finalizar.php">
+                Finalizar
+                </a>
               </div>
 
-             
-             
+              <div class="col d-flex align-items-end" >
+              </div
           </div>
 
    </form>
+
+  
 </section>
 
 <section>
@@ -122,11 +128,14 @@ echo '
 
    if (count($_SESSION['carrinho']) == 0) {
     echo "<tr>
-                 <td>
-                 Nenhum produro adicionado.....
-                 </td>
-          </tr>";
+    <td>
+    Nenhum produro adicionado.....
+    </td>
+    </tr>";
 } else {
+    
+    $_SESSION['dados'] = array();
+
     $total =  0;
     foreach ($_SESSION['carrinho'] as $id => $qtd) {
 
@@ -153,6 +162,20 @@ echo '
             
          
             ';
+
+            
+            array_push(
+                $_SESSION['dados'],
+    
+                array(
+                    'nome'         => $item->nome,
+                    'qtd'          => $qtd,
+                    'preco'        => $item->preco,
+                    'subtotal'     => $sub,
+                    'produtos_id'  => $id,
+                )
+            );
+
     }
 
 }
