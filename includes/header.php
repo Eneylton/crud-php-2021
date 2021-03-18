@@ -33,6 +33,8 @@ use \App\Session\Login;
     
     <h2>Eneylton Barros</h2>
     <p><a href="produtos.php" >Lista de produtos</a></p>
+    <p><a href="pdf.php" >Gerar PDF</a></p>
+    <p><a href="listar-simples.php" >listar PDF</a></p>
 
     <hr class="border-light">
 

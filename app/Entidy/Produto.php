@@ -49,6 +49,16 @@ public static function getProdutos($where = null, $order = null, $limit = null){
 
 }
 
+
+public static function getPdf(){
+
+    return (new Database ('produtos'))->pdf($where = null)
+                                   ->fetchAll(PDO::FETCH_CLASS, self::class);
+
+}
+
+
+
 public static function getProdutoUsuarios($where = null, $order = null, $limit = null){
 
     return (new Database ('usuarios'))->select($where,$order,$limit)

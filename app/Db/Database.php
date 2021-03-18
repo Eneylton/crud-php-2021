@@ -8,7 +8,7 @@ use \PDOException;
 class Database{
 
     const HOST ='localhost';
-    const NAME ='db_phpcarrinho';
+    const NAME ='db_carrinho_lojao';
     const USER ='root';
     const PASS ='';
 
@@ -69,6 +69,17 @@ class Database{
         $limit = strlen($limit) ? 'LIMIT ' .$limit : '';
 
         $query = 'SELECT '.$fields.' FROM ' .$this->table.' '.$where.' '.$order.' '.$limit;
+
+        return $this->execute($query);
+                
+    }
+
+    public function pdf($where = null){
+            
+        $where = strlen($where) ? 'WHERE ' .$where : '';
+
+
+        $query = 'SELECT * FROM ' .$this->table.' '.$where ;
 
         return $this->execute($query);
                 
